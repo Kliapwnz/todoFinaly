@@ -3,10 +3,10 @@ import React from 'react';
 type PropsType = {
     title: string
     tasks: PropsTasksType[]
-    removeTask:(taskId:number)=> void
+    removeTask:(taskId:string)=> void
 }
 type PropsTasksType = {
-    id: number;
+    id: string;
     title: string;
     isDone: boolean
 }
