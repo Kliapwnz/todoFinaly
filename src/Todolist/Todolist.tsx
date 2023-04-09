@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
 type PropsType = {
     title: string
     tasks: PropsTasksType[]
     removeTask: (taskId: string) => void
-    addTask: () => void
+    addTask: (title:string) => void
 }
 type PropsTasksType = {
     id: string;
@@ -12,13 +12,18 @@ type PropsTasksType = {
     isDone: boolean
 }
 export const Todolist = (props: PropsType) => {
-    let [title, setTitle] =useState("")
+    let [title, setTitle] = useState("")
     return (
         <div>
             <h3>{props.title}</h3>
             <div>
-                <input value={title}/>
-                <button onClick={()=>{props.addTask()}}>+</button>
+                <input value={title} onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                    setTitle(e.currentTarget.value)
+                }}/>
+                <button onClick={() => {
+                    props.addTask(title)
+                }}>+
+                </button>
             </div>
             <ul>
                 {props.tasks.map((e) => {
