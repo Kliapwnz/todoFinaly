@@ -17,19 +17,21 @@ export const Todolist = (props: PropsType) => {
         props.addTask(title)
         setTitle("")
     }
+    const onChange = () => (e: ChangeEvent<HTMLInputElement>) => {
+        setTitle(e.currentTarget.value)
+    }
+    const onKeyDown = () => (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            addTask()
+        }
+    }
     return (
         <div>
             <h3>{props.title}</h3>
             <div>
                 <input value={title}
-                       onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                           setTitle(e.currentTarget.value)
-                       }}
-                       onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-                           if (e.key === "Enter") {
-                               addTask()
-                           }
-                       }}
+                       onChange={onChange}
+                       onKeyDown={onKeyDown}
                 />
                 <button onClick={addTask}>+
                 </button>
