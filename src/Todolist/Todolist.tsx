@@ -4,7 +4,7 @@ type PropsType = {
     title: string
     tasks: PropsTasksType[]
     removeTask: (taskId: string) => void
-    addTask: (title:string) => void
+    addTask: (title: string) => void
 }
 type PropsTasksType = {
     id: string;
@@ -13,7 +13,7 @@ type PropsTasksType = {
 }
 export const Todolist = (props: PropsType) => {
     let [title, setTitle] = useState("")
-    const addTask =() => {
+    const addTask = () => {
         props.addTask(title)
         setTitle("")
     }
@@ -21,9 +21,16 @@ export const Todolist = (props: PropsType) => {
         <div>
             <h3>{props.title}</h3>
             <div>
-                <input value={title} onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                    setTitle(e.currentTarget.value)
-                }}/>
+                <input value={title}
+                       onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                           setTitle(e.currentTarget.value)
+                       }}
+                       onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                           if (e.key === "Enter") {
+                               addTask()
+                           }
+                       }}
+                />
                 <button onClick={addTask}>+
                 </button>
             </div>
