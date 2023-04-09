@@ -5,8 +5,8 @@ import {Todolist} from "./Todolist/Todolist";
 function App() {
     return (
         <div className="App">
-            <Todolist/>
-            <Todolist/>
+            <Todolist title={"What is your name"}/>
+            <Todolist title={"What is my name"}/>
         </div>
     );
 }
