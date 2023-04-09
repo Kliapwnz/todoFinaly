@@ -4,16 +4,23 @@ import {Todolist} from "./Todolist/Todolist";
 import {v1} from "uuid";
 
 function App() {
-    let [tasks, setTasks] = useState( [
-        { id: v1(), title: "HTML&CSS", isDone: true },
-        { id: v1(), title: "JS", isDone: true },
-        { id: v1(), title: "ReactJS", isDone: false },
-        { id: v1(), title: "Football", isDone: true },
-        { id: v1(), title: "Hockey", isDone: false }
+    let [tasks, setTasks] = useState([
+        {id: v1(), title: "HTML&CSS", isDone: true},
+        {id: v1(), title: "JS", isDone: true},
+        {id: v1(), title: "ReactJS", isDone: false},
+        {id: v1(), title: "Football", isDone: true},
+        {id: v1(), title: "Hockey", isDone: false}
     ])
-    function removeTask(taskId:string) {
-        let  filteredTasks = tasks.filter(task => task.id != taskId)
+
+    function removeTask(taskId: string) {
+        let filteredTasks = tasks.filter(task => task.id != taskId)
         setTasks(filteredTasks)
+    }
+
+    function addTask() {
+        let task = {id: v1(), title: "new task", isDone: false}
+        let newTask = [task, ...tasks]
+        setTasks(newTask)
     }
 
     return (
@@ -21,6 +28,7 @@ function App() {
             <Todolist title="What is your name"
                       tasks={tasks}
                       removeTask={removeTask}
+                      addTask={addTask}
             />
         </div>
     );
