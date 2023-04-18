@@ -47,8 +47,8 @@ function App() {
     }
 
 
-    function changeFilter(value: FilterValuesType) {
-        // setTodolists(value)
+    function changeFilter(todolistID:string, value: FilterValuesType) {
+
     }
 
 
@@ -64,6 +64,7 @@ function App() {
                 }
                 return (
                     <Todolist
+                        todolistID={el.id}
                         title={el.title}
                         tasks={tasksForTodolist}
                         removeTask={removeTask}
