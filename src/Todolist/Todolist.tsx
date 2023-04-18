@@ -75,7 +75,7 @@ export const Todolist = (props: PropsType) => {
                 })}
             </ul>
             <div>
-                <button onClick={onAllClickHandler}>All</button>
+                <button className="active-filter" onClick={onAllClickHandler}>All</button>
                 <button onClick={onActiveClickHandler}>Active</button>
                 <button onClick={onCompletedClickHandler}>Completed
                 </button>
