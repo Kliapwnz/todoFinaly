@@ -17,13 +17,15 @@ type PropsTasksType = {
 export const Todolist = (props: PropsType) => {
     let [title, setTitle] = useState("")
     const addTask = () => {
-        props.addTask(title)
-        setTitle("")
+        if (title.trim() != "") {
+            props.addTask(title.trim())
+            setTitle("")
+        }
     }
-    const onChange = () => (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
     }
-    const onKeyDown = () => (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             addTask()
         }
@@ -42,15 +44,17 @@ export const Todolist = (props: PropsType) => {
             <h3>{props.title}</h3>
             <div>
                 <input value={title}
-                       onChange={onChange}
-                       onKeyDown={onKeyDown}
+                       onChange={onChangeHandler}
+                       onKeyDown={onKeyDownHandler}
                 />
                 <button onClick={addTask}>+
                 </button>
             </div>
             <ul>
                 {props.tasks.map((el) => {
-                    const onClickHandler = () => {props.removeTask(el.id)}
+                    const onClickHandler = () => {
+                        props.removeTask(el.id)
+                    }
                     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
                         let newIsDoneValue = e.currentTarget.checked
                         props.changeTaskStatus(el.id, newIsDoneValue)
