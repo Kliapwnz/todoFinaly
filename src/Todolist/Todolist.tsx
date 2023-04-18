@@ -8,6 +8,7 @@ type PropsType = {
     addTask: (title: string) => void
     changeFilter: (value: FilterValueType) => void
     changeTaskStatus: (id: string, isDone: boolean) => void
+    filter: string
 }
 type PropsTasksType = {
     id: string;
@@ -21,7 +22,7 @@ export const Todolist = (props: PropsType) => {
         if (title.trim() != "") {
             props.addTask(title.trim())
             setTitle("")
-        }else {
+        } else {
             setError("Title is required!")
         }
     }
@@ -53,7 +54,7 @@ export const Todolist = (props: PropsType) => {
                        className={error ? "error" : ""}
                 />
                 <button onClick={addTask}>+</button>
-                {error && <div className="error-message">{error}</div> }
+                {error && <div className="error-message">{error}</div>}
             </div>
             <ul>
                 {props.tasks.map((el) => {
