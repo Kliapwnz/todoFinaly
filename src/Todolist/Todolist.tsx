@@ -29,6 +29,7 @@ export const Todolist = (props: PropsType) => {
         setTitle(e.currentTarget.value)
     }
     const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        setError(null)
         if (e.key === "Enter") {
             addTask()
         }
