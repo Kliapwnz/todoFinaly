@@ -1,10 +1,12 @@
 import React, {ChangeEvent, useState} from 'react';
+import {FilterValueType} from "../App";
 
 type PropsType = {
     title: string
     tasks: PropsTasksType[]
     removeTask: (taskId: string) => void
     addTask: (title: string) => void
+    changeFilter:(value:FilterValueType)=>void
 }
 type PropsTasksType = {
     id: string;
