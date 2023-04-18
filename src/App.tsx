@@ -11,7 +11,7 @@ function App() {
         {id: v1(), title: "Football", isDone: true},
         {id: v1(), title: "Hockey", isDone: false}
     ])
-    let [filter, setFilter] = useState("all")
+    let [filter, setFilter] = useState<"all" | "active" | "completed">("all")
     let tasksForTodolist = tasks
     if (filter === "active") {
         tasksForTodolist = tasks.filter(task => task.isDone === false)
