@@ -42,7 +42,7 @@ function App() {
         let newTask = {id: v1(), title: title, isDone: false};
        setTasks({...tasks, [todolistID]:[newTask,...tasks[todolistID]]})
     }
-    function changeStatus(taskId: string, isDone: boolean) {
+    function changeStatus(todolistID:string, taskId: string, isDone: boolean) {
         // let task = tasks.find(t => t.id === taskId);
         // // if (task) {
         // //     task.isDone = isDone;
