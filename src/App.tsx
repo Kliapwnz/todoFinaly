@@ -39,9 +39,8 @@ function App() {
         setTasks({...tasks, [todolistID]:tasks[todolistID].filter(el=> el.id !==taskId)})
     }
     function addTask(todolistID:string,title: string) {
-        // let task = {id: v1(), title: title, isDone: false};
-        // let newTasks = [task, ...tasks];
-        // setTasks(newTasks);
+        let newTask = {id: v1(), title: title, isDone: false};
+       setTasks({...tasks, [todolistID]:[...tasks[todolistID],newTask]})
     }
     function changeStatus(taskId: string, isDone: boolean) {
         // let task = tasks.find(t => t.id === taskId);
