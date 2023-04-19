@@ -9,8 +9,8 @@ type TodolistsType = {
     title: string;
     filter: FilterValuesType
 }
-type TasksType={
-    [key:string]:TaskType[]
+type TasksType = {
+    [key: string]: TaskType[]
 }
 
 function App() {
@@ -35,14 +35,16 @@ function App() {
         ]
     })
 
-    function removeTask(todolistID:string,taskId: string) {
-        setTasks({...tasks, [todolistID]:tasks[todolistID].filter(el=> el.id !==taskId)})
+    function removeTask(todolistID: string, taskId: string) {
+        setTasks({...tasks, [todolistID]: tasks[todolistID].filter(el => el.id !== taskId)})
     }
-    function addTask(todolistID:string,title: string) {
+
+    function addTask(todolistID: string, title: string) {
         let newTask = {id: v1(), title: title, isDone: false};
-       setTasks({...tasks, [todolistID]:[newTask,...tasks[todolistID]]})
+        setTasks({...tasks, [todolistID]: [newTask, ...tasks[todolistID]]})
     }
-    function changeStatus(todolistID:string, taskId: string, isDone: boolean) {
+
+    function changeStatus(todolistID: string, taskId: string, isDone: boolean) {
         // let task = tasks.find(t => t.id === taskId);
         // // if (task) {
         // //     task.isDone = isDone;
@@ -50,6 +52,7 @@ function App() {
         // //
         // // setTasks([...tasks]);
     }
+
     function changeFilter(todolistID: string, value: FilterValuesType) {
         setTodolists(todolists.map(el => el.id === todolistID ? {...el, filter: value} : el))
     }
