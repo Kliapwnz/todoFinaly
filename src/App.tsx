@@ -63,7 +63,7 @@ function App() {
     }
     return (
         <div className="App">
-            <AddItemForm addTask={() => {}} taskID={"props.id"}/>
+            <AddItemForm callBack={() => {}} taskID={"props.id"}/>
             {todolists.map(el => {
                 let tasksForTodolist = tasks[el.id];
                 if (el.filter === "active") {
