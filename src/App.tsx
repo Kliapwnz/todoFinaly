@@ -58,10 +58,13 @@ function App() {
         setTodolists(todolists.map(el => el.id === todolistID ? {...el, filter: value} : el))
     }
 
+    const addTodolist = () => {
 
+    }
     return (
         <div className="App">
-            <AddItemForm addTask={()=>{}} taskID={"props.id"}/>
+            <AddItemForm addTask={() => {
+            }} taskID={"props.id"}/>
             {todolists.map(el => {
                 let tasksForTodolist = tasks[el.id];
                 if (el.filter === "active") {
