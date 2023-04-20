@@ -1,10 +1,12 @@
 import React from 'react';
 
-export const EditableSpan = () => {
+type PropsType = {
+    title: string
+}
+
+export const EditableSpan = (props: PropsType) => {
     return (
-        <div>
-            <span>{t.title}</span>
-        </div>
+        <span>{props.title}</span>
     );
 };
 
