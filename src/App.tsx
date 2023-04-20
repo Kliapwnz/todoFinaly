@@ -58,12 +58,13 @@ function App() {
         setTodolists(todolists.map(el => el.id === todolistID ? {...el, filter: value} : el))
     }
 
-    const addTodolist = (todolistID: string, newTitle: string) => {
-
+    const addTodolist = (newTitle: string) => {
+        const newTodo:TodolistsType={id: v1(), title: newTitle, filter: 'all'}
+        setTodolists([...todolists, newTodo])
     }
     return (
         <div className="App">
-            <AddItemForm callBack={() => {}}/>
+            <AddItemForm callBack={addTodolist}/>
             {todolists.map(el => {
                 let tasksForTodolist = tasks[el.id];
                 if (el.filter === "active") {
