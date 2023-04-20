@@ -7,6 +7,7 @@ type PropsType = {
 export const EditableSpan = (props: PropsType) => {
     const [edit, setEdit] = useState(false)
     return (
+        edit ? <input value={props.title}/> :
         <span>{props.title}</span>
     );
 };
