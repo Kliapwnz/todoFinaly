@@ -58,7 +58,7 @@ function App() {
         setTodolists(todolists.map(el => el.id === todolistID ? {...el, filter: value} : el))
     }
 
-    const addTodolist = () => {
+    const addTodolist = (todolistID: string, newTitle: string) => {
 
     }
     return (
