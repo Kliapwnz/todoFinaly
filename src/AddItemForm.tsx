@@ -1,10 +1,11 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-type PropsType={
+
+type PropsType = {
     addTask: (todolistID: string, title: string) => void
     todolistID: string
 }
 
-export const AddItemForm = (props:PropsType) => {
+export const AddItemForm = (props: PropsType) => {
     let [title, setTitle] = useState("")
     let [error, setError] = useState<string | null>(null)
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
