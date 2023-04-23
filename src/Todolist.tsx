@@ -5,6 +5,7 @@ import {EditableSpan} from "./EditableSpan";
 import {Button, IconButton} from "@mui/material";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
+
 export type TaskType = {
     id: string
     title: string

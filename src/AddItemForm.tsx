@@ -1,4 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import {IconButton} from "@mui/material";
 
 type PropsType = {
     callBack: (title: string) => void
@@ -31,7 +33,9 @@ export const AddItemForm = (props: PropsType) => {
                    onKeyPress={onKeyPressHandler}
                    className={error ? "error" : ""}
             />
-            <button onClick={addTask}>+</button>
+            <IconButton onClick={addTask}>
+                <AddCircleOutlineIcon/>
+            </IconButton>
             {error && <div className="error-message">{error}</div>}
         </div>
     );
