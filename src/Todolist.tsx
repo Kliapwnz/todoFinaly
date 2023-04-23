@@ -68,7 +68,7 @@ export function Todolist(props: PropsType) {
                 })
             }
         </ul>
-        <div>
+        <div className={"btn-filter-container"}>
             <Button variant="contained"
                     size="small"
                     disableElevation
