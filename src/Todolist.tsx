@@ -44,7 +44,9 @@ export function Todolist(props: PropsType) {
     return <div>
         <h3>
             <EditableSpan oldTitle={props.title} callBack={updateTodoHandler}/>
-            <IconButton onClick={removeTodoHandler}>
+            <IconButton
+                size="small"
+                onClick={removeTodoHandler}>
                 <DeleteOutlineIcon/>
             </IconButton>
         </h3>
@@ -66,7 +68,9 @@ export function Todolist(props: PropsType) {
                                onChange={onChangeHandler}
                                checked={t.isDone}/>
                         <EditableSpan oldTitle={t.title} callBack={updateTaskHandler}/>
-                        <IconButton onClick={onClickHandler}>
+                        <IconButton
+                            size="small"
+                            onClick={onClickHandler}>
                             <DeleteOutlineIcon/>
                         </IconButton>
                     </li>
