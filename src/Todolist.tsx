@@ -23,7 +23,7 @@ type PropsType = {
     todolistID: string
     removeTodo: (todolistID: string) => void
     updateTask: (todolistID: string, taskID: string, newTitle: string) => void
-    updateTodolistTile:(todolistID: string, newTitle: string)=>void
+    updateTodolistTile: (todolistID: string, newTitle: string) => void
 }
 
 export function Todolist(props: PropsType) {
@@ -38,7 +38,7 @@ export function Todolist(props: PropsType) {
     const addTaskHandler = (title: string) => {
         props.addTask(props.todolistID, title)
     }
-    const updateTodoHandler = (newTitle:string) => {
+    const updateTodoHandler = (newTitle: string) => {
         props.updateTodolistTile(props.todolistID, newTitle)
     }
 
@@ -60,7 +60,7 @@ export function Todolist(props: PropsType) {
                     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
                         props.changeTaskStatus(props.todolistID, t.id, e.currentTarget.checked);
                     }
-                    const updateTaskHandler = (newTitle:string) => {
+                    const updateTaskHandler = (newTitle: string) => {
                         props.updateTask(props.todolistID, t.id, newTitle)
                     }
 
