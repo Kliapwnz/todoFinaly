@@ -77,6 +77,7 @@ export function Todolist(props: PropsType) {
             </Button>
             <Button variant="contained"
                     size="small"
+                    disableElevation
                     className={props.filter === 'active' ? "active-filter" : ""}
                     onClick={onActiveClickHandler}>Active
             </Button>
