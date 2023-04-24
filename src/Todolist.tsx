@@ -2,7 +2,7 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
-import {Button, Checkbox, IconButton, ListItem, TextField, Typography} from "@mui/material";
+import {Button, Checkbox, IconButton, List, ListItem, TextField, Typography} from "@mui/material";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import {CheckBox} from "@mui/icons-material";
 
@@ -59,7 +59,7 @@ export function Todolist(props: PropsType) {
         </Typography>
         <AddItemForm callBack={addTaskHandler}/>
 
-        <ul>
+        <List>
             {
                 props.tasks.map(t => {
                     const onClickHandler = () => props.removeTask(props.todolistID, t.id)
@@ -81,6 +81,8 @@ export function Todolist(props: PropsType) {
                     >
 
                         <Checkbox
+                            edge="start"
+                            color="secondary"
                             size={"small"}
                             onChange={onChangeHandler}
                             checked={t.isDone}
@@ -89,7 +91,7 @@ export function Todolist(props: PropsType) {
                     </ListItem>
                 })
             }
-        </ul>
+        </List>
         <div className={"btn-filter-container"}>
             <Button variant="contained"
                     size="small"
