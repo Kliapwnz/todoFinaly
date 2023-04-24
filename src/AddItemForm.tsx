@@ -29,7 +29,7 @@ export const AddItemForm = (props: PropsType) => {
     return (
         <div>
             <TextField id="outlined-basic"
-                       label="Outlined"
+                       label="Enter text task title, please"
                        variant="outlined"
                        size={"small"}
                        value={title}
