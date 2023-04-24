@@ -47,6 +47,7 @@ export function Todolist(props: PropsType) {
             variant={"h5"}
             align={"center"}
             fontWeight={"bold"}
+            gutterBottom
         >
             <EditableSpan oldTitle={props.title} callBack={updateTodoHandler}/>
             <IconButton
