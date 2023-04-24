@@ -72,16 +72,16 @@ export function Todolist(props: PropsType) {
                     return <ListItem key={t.id}
                                      className={t.isDone ? "is-done" : ""}
                                      disablePadding
+                                     secondaryAction={<IconButton
+                                         size="small"
+                                         onClick={onClickHandler}>
+                                         <DeleteOutlineIcon/>
+                                     </IconButton>}
                     >
                         <input type="checkbox"
                                onChange={onChangeHandler}
                                checked={t.isDone}/>
                         <EditableSpan oldTitle={t.title} callBack={updateTaskHandler}/>
-                        <IconButton
-                            size="small"
-                            onClick={onClickHandler}>
-                            <DeleteOutlineIcon/>
-                        </IconButton>
                     </ListItem>
                 })
             }
