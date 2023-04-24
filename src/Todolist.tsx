@@ -82,7 +82,7 @@ export function Todolist(props: PropsType) {
 
                         <Checkbox
                             edge="start"
-                            color="secondary"
+                            color="success"
                             size={"small"}
                             onChange={onChangeHandler}
                             checked={t.isDone}
