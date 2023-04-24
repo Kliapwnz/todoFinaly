@@ -2,8 +2,9 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
-import {Button, IconButton, ListItem, TextField, Typography} from "@mui/material";
+import {Button, Checkbox, IconButton, ListItem, TextField, Typography} from "@mui/material";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import {CheckBox} from "@mui/icons-material";
 
 
 export type TaskType = {
@@ -78,9 +79,12 @@ export function Todolist(props: PropsType) {
                                          <DeleteOutlineIcon/>
                                      </IconButton>}
                     >
-                        <input type="checkbox"
-                               onChange={onChangeHandler}
-                               checked={t.isDone}/>
+
+                        <Checkbox
+                            size={"small"}
+                            onChange={onChangeHandler}
+                            checked={t.isDone}
+                        />
                         <EditableSpan oldTitle={t.title} callBack={updateTaskHandler}/>
                     </ListItem>
                 })
