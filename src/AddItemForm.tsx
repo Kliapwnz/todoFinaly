@@ -23,25 +23,23 @@ export const AddItemForm = (props: PropsType) => {
             props.callBack(title.trim());
             setTitle("");
         } else {
-            setError("Title is required");
+            setError("Title is required!");
         }
     }
     return (
         <div>
             <TextField id="outlined-basic"
-                       label="Enter title, please"
+                       label={error ? "Title is required!" : "Enter item title, please" }
                        variant="outlined"
                        size={"small"}
                        value={title}
                        error={!!error}
-                       helperText={error}
                        onChange={onChangeHandler}
                        onKeyPress={onKeyPressHandler}
                        />
             <IconButton onClick={addTask}>
                 <AddCircleOutlineIcon/>
             </IconButton>
-            {error && <div className="error-message">{error}</div>}
         </div>
     );
 };
