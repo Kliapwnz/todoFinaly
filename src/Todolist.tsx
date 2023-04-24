@@ -2,7 +2,7 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
-import {Button, IconButton} from "@mui/material";
+import {Button, IconButton, Typography} from "@mui/material";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 
@@ -43,14 +43,14 @@ export function Todolist(props: PropsType) {
     }
 
     return <div>
-        <h3>
+        <Typography>
             <EditableSpan oldTitle={props.title} callBack={updateTodoHandler}/>
             <IconButton
                 size="small"
                 onClick={removeTodoHandler}>
                 <DeleteOutlineIcon/>
             </IconButton>
-        </h3>
+        </Typography>
         <AddItemForm callBack={addTaskHandler}/>
 
         <ul>
