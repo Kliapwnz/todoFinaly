@@ -21,6 +21,7 @@ export const EditableSpan = (props: PropsType) => {
     }
     return (
         edit ? <TextField
+                variant="standard"
                 size="small"
                 value={newTitle}
                 onBlur={editHandler}
