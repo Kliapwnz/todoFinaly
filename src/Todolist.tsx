@@ -2,7 +2,7 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
-import {Button, IconButton, TextField, Typography} from "@mui/material";
+import {Button, IconButton, ListItem, TextField, Typography} from "@mui/material";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 
@@ -69,7 +69,10 @@ export function Todolist(props: PropsType) {
                         props.updateTask(props.todolistID, t.id, newTitle)
                     }
 
-                    return <li key={t.id} className={t.isDone ? "is-done" : ""}>
+                    return <ListItem key={t.id}
+                                     className={t.isDone ? "is-done" : ""}
+                                     disablePadding
+                    >
                         <input type="checkbox"
                                onChange={onChangeHandler}
                                checked={t.isDone}/>
@@ -79,7 +82,7 @@ export function Todolist(props: PropsType) {
                             onClick={onClickHandler}>
                             <DeleteOutlineIcon/>
                         </IconButton>
-                    </li>
+                    </ListItem>
                 })
             }
         </ul>
