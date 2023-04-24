@@ -34,6 +34,7 @@ export const AddItemForm = (props: PropsType) => {
                        size={"small"}
                        value={title}
                        error={!!error}
+                       helperText={error}
                        onChange={onChangeHandler}
                        onKeyPress={onKeyPressHandler}
                        />
