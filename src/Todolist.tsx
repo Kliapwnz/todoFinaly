@@ -43,7 +43,10 @@ export function Todolist(props: PropsType) {
     }
 
     return <div>
-        <Typography>
+        <Typography
+            variant={"h5"}
+            align={"center"}
+        >
             <EditableSpan oldTitle={props.title} callBack={updateTodoHandler}/>
             <IconButton
                 size="small"
