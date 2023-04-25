@@ -79,8 +79,12 @@ function App() {
 
     const customTheme = createTheme({
         palette: {
-            primary: teal,
-            secondary: lightGreen,
+            primary: {
+                main: '#90caf9',
+            },
+            secondary: {
+                main: '#3f51b5',
+            },
         },
     })
     return (
