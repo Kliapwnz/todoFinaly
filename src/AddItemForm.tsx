@@ -29,14 +29,14 @@ export const AddItemForm = (props: PropsType) => {
     return (
         <div>
             <TextField id="outlined-basic"
-                       label={error ? "Title is required!" : "Enter item title, please" }
+                       label={error ? "Title is required!" : "Enter item title, please"}
                        variant="outlined"
                        size={"small"}
                        value={title}
                        error={!!error}
                        onChange={onChangeHandler}
                        onKeyPress={onKeyPressHandler}
-                       />
+            />
             <IconButton onClick={addTask}>
                 <AddCircleOutlineIcon/>
             </IconButton>
