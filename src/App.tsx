@@ -79,7 +79,7 @@ function App() {
         <div className="App">
             <ButtonAppBar/>
             <Container fixed>
-                <Grid container style={{padding:"20px"}}>
+                <Grid container style={{padding: "20px"}}>
                     <AddItemForm callBack={addTodolist}/>
                 </Grid>
                 <Grid container spacing={3}>
