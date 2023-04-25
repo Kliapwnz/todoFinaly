@@ -22,3 +22,7 @@
 /*.is-done {*/
 /*    opacity: 0.5;*/
 /*}*/
+.btn-filter-container{
+    display: flex;
+    justify-content: space-between;
+}
