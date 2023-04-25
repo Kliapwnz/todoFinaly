@@ -82,6 +82,7 @@ function App() {
                 <Grid container>
                     <AddItemForm callBack={addTodolist}/>
                 </Grid>
+                <Grid container>
                 {todolists.map(el => {
                     let tasksForTodolist = tasks[el.id];
                     if (el.filter === "active") {
@@ -107,6 +108,7 @@ function App() {
                         />
                     )
                 })}
+                </Grid>
             </Container>
         </div>
     );
