@@ -4,7 +4,7 @@ import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import {AddItemForm} from "./AddItemForm";
 import {ButtonAppBar} from "./ButtonAppBar";
-import {Container, Grid} from "@mui/material";
+import {Container, Grid, Paper} from "@mui/material";
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistsType = {
@@ -79,10 +79,10 @@ function App() {
         <div className="App">
             <ButtonAppBar/>
             <Container fixed>
-                <Grid container>
+                <Grid container style={{padding:"20px"}}>
                     <AddItemForm callBack={addTodolist}/>
                 </Grid>
-                <Grid container>
+                <Grid container spacing={3}>
                     {todolists.map(el => {
                         let tasksForTodolist = tasks[el.id];
                         if (el.filter === "active") {
@@ -91,22 +91,24 @@ function App() {
                         if (el.filter === "completed") {
                             tasksForTodolist = tasks[el.id].filter(t => t.isDone === true);
                         }
-                        return (
-                            <Todolist
-                                key={el.id}
-                                todolistID={el.id}
-                                title={el.title}
-                                tasks={tasksForTodolist}
-                                removeTask={removeTask}
-                                changeFilter={changeFilter}
-                                addTask={addTask}
-                                changeTaskStatus={changeStatus}
-                                filter={el.filter}
-                                removeTodo={removeTodo}
-                                updateTask={updateTask}
-                                updateTodolistTile={updateTodolistTile}
-                            />
-                        )
+                        return <Grid item>
+                            <Paper style={{padding: "10px"}}>
+                                <Todolist
+                                    key={el.id}
+                                    todolistID={el.id}
+                                    title={el.title}
+                                    tasks={tasksForTodolist}
+                                    removeTask={removeTask}
+                                    changeFilter={changeFilter}
+                                    addTask={addTask}
+                                    changeTaskStatus={changeStatus}
+                                    filter={el.filter}
+                                    removeTodo={removeTodo}
+                                    updateTask={updateTask}
+                                    updateTodolistTile={updateTodolistTile}
+                                />
+                            </Paper>
+                        </Grid>
                     })}
                 </Grid>
             </Container>
