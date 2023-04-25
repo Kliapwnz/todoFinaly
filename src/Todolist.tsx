@@ -46,7 +46,7 @@ export function Todolist(props: PropsType) {
     return <div>
         <Typography
             variant={"h5"}
-            // align={"center"}
+            align={"center"}
             fontWeight={"bold"}
             gutterBottom
         >
