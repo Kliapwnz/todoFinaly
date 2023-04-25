@@ -4,7 +4,7 @@ import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import {AddItemForm} from "./AddItemForm";
 import {ButtonAppBar} from "./ButtonAppBar";
-import {Container, createTheme, Grid, Paper, ThemeProvider} from "@mui/material";
+import {Container, createTheme, CssBaseline, Grid, Paper, ThemeProvider} from "@mui/material";
 import {lightGreen, teal} from "@mui/material/colors";
 
 export type FilterValuesType = "all" | "active" | "completed";
@@ -76,7 +76,7 @@ function App() {
         setTodolists([...todolists, newTodo])
         setTasks({...tasks, [newID]: []})
     }
-
+    
     const customTheme = createTheme({
         palette: {
             primary: {
@@ -89,6 +89,7 @@ function App() {
     })
     return (
         <ThemeProvider theme={customTheme}>
+            <CssBaseline/>
             <div className="App">
                 <ButtonAppBar/>
                 <Container fixed>
