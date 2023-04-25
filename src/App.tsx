@@ -3,6 +3,7 @@ import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import {AddItemForm} from "./AddItemForm";
+import {ButtonAppBar} from "./ButtonAppBar";
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistsType = {
@@ -75,6 +76,7 @@ function App() {
     }
     return (
         <div className="App">
+            <ButtonAppBar/>
             <AddItemForm callBack={addTodolist}/>
             {todolists.map(el => {
                 let tasksForTodolist = tasks[el.id];
