@@ -83,31 +83,31 @@ function App() {
                     <AddItemForm callBack={addTodolist}/>
                 </Grid>
                 <Grid container>
-                {todolists.map(el => {
-                    let tasksForTodolist = tasks[el.id];
-                    if (el.filter === "active") {
-                        tasksForTodolist = tasks[el.id].filter(t => t.isDone === false);
-                    }
-                    if (el.filter === "completed") {
-                        tasksForTodolist = tasks[el.id].filter(t => t.isDone === true);
-                    }
-                    return (
-                        <Todolist
-                            key={el.id}
-                            todolistID={el.id}
-                            title={el.title}
-                            tasks={tasksForTodolist}
-                            removeTask={removeTask}
-                            changeFilter={changeFilter}
-                            addTask={addTask}
-                            changeTaskStatus={changeStatus}
-                            filter={el.filter}
-                            removeTodo={removeTodo}
-                            updateTask={updateTask}
-                            updateTodolistTile={updateTodolistTile}
-                        />
-                    )
-                })}
+                    {todolists.map(el => {
+                        let tasksForTodolist = tasks[el.id];
+                        if (el.filter === "active") {
+                            tasksForTodolist = tasks[el.id].filter(t => t.isDone === false);
+                        }
+                        if (el.filter === "completed") {
+                            tasksForTodolist = tasks[el.id].filter(t => t.isDone === true);
+                        }
+                        return (
+                            <Todolist
+                                key={el.id}
+                                todolistID={el.id}
+                                title={el.title}
+                                tasks={tasksForTodolist}
+                                removeTask={removeTask}
+                                changeFilter={changeFilter}
+                                addTask={addTask}
+                                changeTaskStatus={changeStatus}
+                                filter={el.filter}
+                                removeTodo={removeTodo}
+                                updateTask={updateTask}
+                                updateTodolistTile={updateTodolistTile}
+                            />
+                        )
+                    })}
                 </Grid>
             </Container>
         </div>
