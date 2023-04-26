@@ -76,7 +76,7 @@ function App() {
         setTodolists([...todolists, newTodo])
         setTasks({...tasks, [newID]: []})
     }
-    
+
     const customTheme = createTheme({
         palette: {
             primary: {
