@@ -1,5 +1,5 @@
 .App {
-/*  padding: 30px;*/
+    /*  padding: 30px;*/
 
 }
 
@@ -22,7 +22,7 @@
 /*.is-done {*/
 /*    opacity: 0.5;*/
 /*}*/
-.btn-filter-container{
+.btn-filter-container {
     display: flex;
     justify-content: space-between;
 }
