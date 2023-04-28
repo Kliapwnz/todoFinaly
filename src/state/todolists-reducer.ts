@@ -10,4 +10,4 @@ export const TodoListsReducer = (state: TodolistsType[], action: any): Todolists
     }
 }
 
-type TsarTypeAction={}
+type TsarTypeAction = {}
