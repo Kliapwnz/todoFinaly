@@ -1,6 +1,6 @@
 import {TodolistsType} from "../App";
 
-export const TodoListsReducer = (state: TodolistsType[], action: any): TodolistsType[] => {
+export const TodoListsReducer = (state: TodolistsType[], action: TsarTypeAction): TodolistsType[] => {
     switch (action.type) {
         case"XXX": {
             return state
@@ -10,4 +10,16 @@ export const TodoListsReducer = (state: TodolistsType[], action: any): Todolists
     }
 }
 
-type TsarTypeAction = {}
+type TsarTypeAction = removeTodolistACType
+
+type removeTodolistACType=ReturnType<typeof removeTodolistAC>
+
+export const removeTodolistAC=(todolistId:string)=>{
+    return {
+        type: 'REMOVE-TODOLIST',
+        payload:{
+            todolistId
+        }
+
+    }as const
+}
