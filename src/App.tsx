@@ -8,7 +8,7 @@ import {Container, createTheme, CssBaseline, Grid, Paper, ThemeProvider} from "@
 import {lightGreen, teal} from "@mui/material/colors";
 
 export type FilterValuesType = "all" | "active" | "completed";
-type TodolistsType = {
+export type TodolistsType = {
     id: string;
     title: string;
     filter: FilterValuesType
